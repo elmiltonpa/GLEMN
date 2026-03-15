@@ -43,12 +43,12 @@ export function Header() {
             <div className="flex items-center gap-2 group">
               <Image 
                 src="/logo-glemn.png" 
-                alt="GLEM Logo" 
+                alt="GLEMN Logo" 
                 width={48} 
                 height={48} 
                 className="rounded-lg object-cover group-hover:rotate-12 transition-transform duration-300" 
               />
-              <span className="text-xl font-bold text-foreground">GLEM</span>
+              <span className="text-xl font-bold text-foreground">GLEMN</span>
             </div>
           </Link>
 

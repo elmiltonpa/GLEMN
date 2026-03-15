@@ -31,12 +31,12 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-4 group">
               <Image 
                 src="/logo-glemn.png" 
-                alt="GLEM Logo" 
+                alt="GLEMN Logo" 
                 width={32} 
                 height={32} 
                 className="rounded-lg object-cover group-hover:scale-105 transition-transform duration-300" 
               />
-              <span className="text-xl font-bold text-foreground">GLEM</span>
+              <span className="text-xl font-bold text-foreground">GLEMN</span>
             </Link>
             <p className="mt-4 text-muted-foreground text-sm max-w-sm">
               Creando experiencias digitales excepcionales con las últimas tecnologías web.
@@ -87,7 +87,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} GLEM. Todos los derechos reservados.
+              © {new Date().getFullYear()} GLEMN. Todos los derechos reservados.
             </p>
           </div>
         </div>
