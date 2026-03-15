@@ -17,11 +17,29 @@ const navLinks = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Actualizar la URL sin recargar la página
+        window.history.pushState(null, '', href);
+      }
+    } else {
+      window.location.href = href;
+    }
+    
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/">
+          <Link href="/" onClick={(e) => scrollToSection(e, '/')}>
             <div className="flex items-center gap-2 group">
               <Image 
                 src="/logo-glemn.png" 
@@ -34,24 +52,20 @@ export function Header() {
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex flex-1 items-center justify-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                onClick={(e) => scrollToSection(e, link.href)}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" size="sm">
-              Ver GitHub
-            </Button>
-            <Button size="sm">Contactar</Button>
-          </div>
+          <div className="w-[100px] hidden md:block"></div>
 
           <button
             className="md:hidden text-foreground"
@@ -66,20 +80,19 @@ export function Header() {
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-4 py-4 space-y-4">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
-                className="block text-muted-foreground hover:text-primary transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+                className="block text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                onClick={(e) => scrollToSection(e, link.href)}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
-            <div className="flex flex-col gap-2 pt-4">
-              <Button variant="outline" size="sm" className="w-full">
-                Ver GitHub
-              </Button>
-              <Button size="sm" className="w-full">Contactar</Button>
+            <div className="flex flex-col pt-4">
+              <a href="#contacto" onClick={(e) => scrollToSection(e, '#contacto')}>
+                <Button size="sm" className="w-full">Contactar</Button>
+              </a>
             </div>
           </div>
         </div>
