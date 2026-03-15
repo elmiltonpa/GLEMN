@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { toast } from "sonner"
 import { Card, CardContent } from "@/components/ui/card"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
 
@@ -14,13 +15,42 @@ export function Contact() {
     subject: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-    alert("¡Mensaje enviado! Te contactaremos pronto.")
-    setFormData({ name: "", email: "", subject: "", message: "" })
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        toast.success("¡Mensaje enviado!", {
+          description: "Te contactaremos lo más pronto posible.",
+        })
+        setFormData({ name: "", email: "", subject: "", message: "" })
+        setIsSuccess(true)
+        setTimeout(() => setIsSuccess(false), 3000)
+      } else {
+        toast.error("Error al enviar", {
+          description: "Hubo un problema al enviar tu mensaje. Por favor intenta nuevamente.",
+        })
+      }
+    } catch (error) {
+      console.error('Error enviando formulario:', error)
+      toast.error("Error de conexión", {
+        description: "No pudimos conectar con el servidor. Por favor intenta de nuevo más tarde.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -98,9 +128,30 @@ export function Contact() {
                       className="bg-background/50 border-border/50 p-4 rounded-xl resize-none focus-visible:ring-primary/50 transition-all"
                     />
                   </div>
-                  <Button type="submit" size="lg" className="w-full sm:w-auto h-12 px-8 rounded-xl gap-2 mt-4 hover:scale-[1.02] transition-transform">
-                    <Send className="h-4 w-4" />
-                    Enviar mensaje
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting || isSuccess} 
+                    size="lg" 
+                    className={`w-full sm:w-auto h-12 px-8 rounded-xl gap-2 mt-4 transition-all duration-300 ${
+                      isSuccess 
+                        ? 'bg-green-500 hover:bg-green-600 text-white scale-100 disabled:opacity-100' 
+                        : 'hover:scale-[1.02] disabled:opacity-70 disabled:pointer-events-none'
+                    }`}
+                  >
+                    {isSuccess ? (
+                      <>
+                        <span className="relative flex h-3 w-3 shrink-0">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                        </span>
+                        ¡Enviado con éxito!
+                      </>
+                    ) : (
+                      <>
+                        <Send className={`h-4 w-4 ${isSubmitting ? 'animate-pulse' : ''}`} />
+                        {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
