@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Code2, Github, Linkedin, Twitter } from "lucide-react"
+import Image from "next/image"
+import { Github, Linkedin, Twitter } from "lucide-react"
 
 const footerLinks = {
   servicios: [
@@ -27,8 +28,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <Code2 className="h-8 w-8 text-primary" />
+            <Link href="/" className="flex items-center gap-2 mb-4 group">
+              <Image 
+                src="/logo-glemn.png" 
+                alt="GLEM Logo" 
+                width={32} 
+                height={32} 
+                className="rounded-lg object-cover group-hover:scale-105 transition-transform duration-300" 
+              />
               <span className="text-xl font-bold text-foreground">GLEM</span>
             </Link>
             <p className="mt-4 text-muted-foreground text-sm max-w-sm">

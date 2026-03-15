@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Code2 } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
@@ -21,8 +22,14 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/">
-            <div className="flex items-center gap-2">
-              <Code2 className="h-8 w-8 text-primary group-hover:rotate-12 transition-transform duration-300" />
+            <div className="flex items-center gap-2 group">
+              <Image 
+                src="/logo-glemn.png" 
+                alt="GLEM Logo" 
+                width={48} 
+                height={48} 
+                className="rounded-lg object-cover group-hover:rotate-12 transition-transform duration-300" 
+              />
               <span className="text-xl font-bold text-foreground">GLEM</span>
             </div>
           </Link>
