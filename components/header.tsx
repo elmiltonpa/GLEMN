@@ -89,11 +89,7 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <div className="flex flex-col pt-4">
-              <a href="#contacto" onClick={(e) => scrollToSection(e, '#contacto')}>
-                <Button size="sm" className="w-full">Contactar</Button>
-              </a>
-            </div>
+
           </div>
         </div>
       )}
