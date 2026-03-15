@@ -1,20 +1,34 @@
 "use client"
 
 import { useState } from "react"
+import { 
+  SiReact, 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiNodedotjs, 
+  SiPostgresql, 
+  SiPrisma, 
+  SiVercel, 
+  SiGraphql, 
+  SiDocker, 
+  SiMongodb 
+} from "react-icons/si"
+import { FaAws } from "react-icons/fa"
 
 const technologies = [
-  { name: "React" },
-  { name: "Next.js" },
-  { name: "TypeScript" },
-  { name: "Tailwind CSS" },
-  { name: "Node.js" },
-  { name: "PostgreSQL" },
-  { name: "Prisma" },
-  { name: "Vercel" },
-  { name: "GraphQL" },
-  { name: "Docker" },
-  { name: "AWS" },
-  { name: "MongoDB" },
+  { name: "React", icon: SiReact, color: "text-[#61DAFB]" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-black dark:text-white" },
+  { name: "TypeScript", icon: SiTypescript, color: "text-[#3178C6]" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
+  { name: "Node.js", icon: SiNodedotjs, color: "text-[#339933]" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "text-[#4169E1]" },
+  { name: "Prisma", icon: SiPrisma, color: "text-[#2D3748] dark:text-white" },
+  { name: "Vercel", icon: SiVercel, color: "text-black dark:text-white" },
+  { name: "GraphQL", icon: SiGraphql, color: "text-[#E10098]" },
+  { name: "Docker", icon: SiDocker, color: "text-[#2496ED]" },
+  { name: "AWS", icon: FaAws, color: "text-[#FF9900]" },
+  { name: "MongoDB", icon: SiMongodb, color: "text-[#47A248]" },
 ]
 
 export function TechStack() {
@@ -56,7 +70,7 @@ export function TechStack() {
                   className="flex-shrink-0 flex flex-col items-center justify-center p-6 rounded-xl bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all min-w-[120px]"
                 >
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                    <span className="text-lg font-bold text-primary">{tech.name.charAt(0)}</span>
+                    <tech.icon className={`w-8 h-8 ${tech.color}`} />
                   </div>
                   <span className="text-sm font-medium text-foreground text-center whitespace-nowrap">{tech.name}</span>
                 </div>
