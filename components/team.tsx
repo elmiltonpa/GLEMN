@@ -3,10 +3,10 @@ import { Github, Linkedin, Twitter } from "lucide-react"
 
 const team = [
   {
-    name: "Carlos Rodríguez",
+    name: "Milton Ibarra",
     role: "Full Stack Developer",
-    bio: "Especialista en arquitecturas escalables y desarrollo con React y Node.js.",
-    avatar: "CR",
+    bio: "Especialista en arquitecturas escalables y desarrollo de aplicaciones web de principio a fin.",
+    avatar: "MI",
     social: {
       github: "#",
       linkedin: "#",
@@ -14,32 +14,32 @@ const team = [
     },
   },
   {
-    name: "María García",
-    role: "UI/UX Designer",
-    bio: "Diseñadora con pasión por crear experiencias digitales memorables.",
-    avatar: "MG",
-    social: {
-      github: "#",
-      linkedin: "#",
-      twitter: "#",
-    },
-  },
-  {
-    name: "Andrés López",
-    role: "Backend Developer",
-    bio: "Experto en APIs, bases de datos y optimización de rendimiento.",
-    avatar: "AL",
-    social: {
-      github: "#",
-      linkedin: "#",
-      twitter: "#",
-    },
-  },
-  {
-    name: "Laura Martínez",
+    name: "Gonzalo Vaschchuk",
     role: "Frontend Developer",
-    bio: "Apasionada por las animaciones y las interfaces interactivas.",
-    avatar: "LM",
+    bio: "Apasionado por crear interfaces dinámicas, intuitivas y con un diseño que impacta.",
+    avatar: "GV",
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Lucas Tabacchi",
+    role: "Backend Developer",
+    bio: "Experto en diseño de APIs, bases de datos y seguridad para sistemas robustos.",
+    avatar: "LT",
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Nahuel Godoy",
+    role: "UI/UX Designer",
+    bio: "Enfocado en la experiencia de usuario y en crear productos digitales estéticamente memorables.",
+    avatar: "NG",
     social: {
       github: "#",
       linkedin: "#",

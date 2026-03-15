@@ -43,14 +43,14 @@ export function Hero() {
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {[
-            { value: "+50", label: "Proyectos completados" },
-            { value: "98%", label: "Clientes satisfechos" },
-            { value: "+5", label: "Años de experiencia" },
-            { value: "24/7", label: "Soporte continuo" },
+            { value: "Innovación", label: "Tecnologías modernas" },
+            { value: "Calidad", label: "Código limpio y escalable" },
+            { value: "Compromiso", label: "Entregas a tiempo" },
+            { value: "Agilidad", label: "Desarrollo iterativo" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary">{stat.value}</div>
-              <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+              <div className="text-xl sm:text-2xl font-bold text-primary">{stat.value}</div>
+              <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
             </div>
           ))}
         </div>
