@@ -1,7 +1,20 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github } from "lucide-react"
+import { Github } from "lucide-react"
 
 export function Hero() {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', href);
+      }
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16">
       <div className="absolute inset-0 overflow-hidden">
@@ -31,14 +44,12 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="gap-2">
-            Iniciar proyecto
-            <ArrowRight className="h-4 w-4" />
-          </Button>
-          <Button variant="outline" size="lg" className="gap-2">
-            <Github className="h-4 w-4" />
-            Ver nuestro trabajo
-          </Button>
+          <a href="#proyectos" onClick={(e) => scrollToSection(e, '#proyectos')}>
+            <Button variant="outline" size="lg" className="gap-2">
+              <Github className="h-4 w-4" />
+              Ver nuestro trabajo
+            </Button>
+          </a>
         </div>
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
