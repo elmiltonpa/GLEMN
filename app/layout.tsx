@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     icon: '/logo-glemn.png',
     apple: '/logo-glemn.png',
   },
+  verification: {
+    google: 'cyhjRkYU-BTDi7jrXHPDeob1KazD8W3iZpUk8yDOP20',
+  },
 }
 
 export default function RootLayout({
