@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     const data = await resend.emails.send({
       from: "Agencia GLEM <onboarding@resend.dev>", // Cambiar por tu dominio verificado cuando esté en producción
-      to: "elmiltonibarra@gmail.com", // Pon aquí el correo donde quieres recibir los mensajes (debe estar verificado en Resend si usas onboarding@resend.dev)
+      to: "glemnsoftware@gmail.com", // Pon aquí el correo donde quieres recibir los mensajes (debe estar verificado en Resend si usas onboarding@resend.dev)
       replyTo: email,
       subject: `Nuevo contacto: ${subject} - de ${name}`,
       html: `

@@ -173,10 +173,10 @@ export function Contact() {
                     Escríbenos directamente si prefieres no usar el formulario. ¡Respondemos rápido!
                   </p>
                   <a 
-                    href="mailto:hola@devstudio.com" 
+                    href="mailto:glemnsoftware@gmail.com" 
                     className="inline-flex items-center text-primary font-medium hover:underline underline-offset-4"
                   >
-                    hola@devstudio.com
+                    glemnsoftware@gmail.com
                   </a>
                 </div>
               </CardContent>
