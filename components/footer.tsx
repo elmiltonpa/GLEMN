@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Github, Linkedin, Twitter } from "lucide-react"
 
 const footerLinks = {
   servicios: [
@@ -16,9 +15,8 @@ const footerLinks = {
     { label: "Blog", href: "#" },
   ],
   legal: [
-    { label: "Privacidad", href: "#" },
-    { label: "Términos", href: "#" },
-    { label: "Cookies", href: "#" },
+    { label: "Privacidad", href: "/privacidad" },
+    { label: "Términos", href: "/terminos" },
   ],
 }
 
@@ -41,17 +39,6 @@ export function Footer() {
             <p className="mt-4 text-muted-foreground text-sm max-w-sm">
               Creando experiencias digitales excepcionales con las últimas tecnologías web.
             </p>
-            <div className="mt-6 flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           <div>
@@ -77,9 +64,8 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-6">Legal</h3>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Términos de Servicio</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Política de Privacidad</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Cookies</a></li>
+              <li><Link href="/terminos" className="hover:text-primary transition-colors">Términos de Servicio</Link></li>
+              <li><Link href="/privacidad" className="hover:text-primary transition-colors">Política de Privacidad</Link></li>
             </ul>
           </div>
         </div>
