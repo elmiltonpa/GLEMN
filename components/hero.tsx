@@ -46,7 +46,7 @@ export function Hero() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#proyectos" onClick={(e) => scrollToSection(e, '#proyectos')}>
             <Button variant="outline" size="lg" className="gap-2">
-              <Github className="h-4 w-4" />
+  
               Ver nuestro trabajo
             </Button>
           </a>

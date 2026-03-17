@@ -4,35 +4,32 @@ import { Github, Linkedin, Twitter } from "lucide-react"
 const team = [
   {
     name: "Milton Ibarra",
-    role: "Full Stack Developer",
-    bio: "Especialista en arquitecturas escalables y desarrollo de aplicaciones web de principio a fin.",
+    role: "Backend Developer",
+    bio: "Estudiante avanzado de Ingeniería en Sistemas de Información, apasionado por la creación de soluciones backend robustas y escalables.",
     avatar: "MI",
     social: {
-      github: "#",
-      linkedin: "#",
-      twitter: "#",
+      github: "https://github.com/elmiltonpa",
+      linkedin: "https://www.linkedin.com/in/milton-ibarra-ba1020205/",
     },
   },
   {
     name: "Gonzalo Vaschchuk",
-    role: "Frontend Developer",
-    bio: "Apasionado por crear interfaces dinámicas, intuitivas y con un diseño que impacta.",
+    role: "Full Stack Developer",
+    bio: "Estudiante avanzado de Ingeniería en Sistemas de Información, enfocado en construir experiencias web completas y eficientes desde el frontend hasta el backend.",
     avatar: "GV",
     social: {
-      github: "#",
-      linkedin: "#",
-      twitter: "#",
+      github: "https://github.com/GonzaProg",
+      linkedin: "http://www.linkedin.com/in/gonzalo-vaschchuk-a4b4033a7",
     },
   },
   {
     name: "Lucas Tabacchi",
-    role: "Backend Developer",
-    bio: "Experto en diseño de APIs, bases de datos y seguridad para sistemas robustos.",
+    role: "Frontend Developer",
+    bio: "Estudiante avanzado de Licenciatura en Sistemas de Información, con un gran interés en las interfaces de usuario interactivas y accesibles.",
     avatar: "LT",
     social: {
       github: "#",
       linkedin: "#",
-      twitter: "#",
     },
   },
   {
@@ -43,7 +40,6 @@ const team = [
     social: {
       github: "#",
       linkedin: "#",
-      twitter: "#",
     },
   },
 ]
@@ -79,6 +75,8 @@ export function Team() {
                 <div className="flex items-center justify-center gap-4">
                   <a 
                     href={member.social.github} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                     aria-label={`GitHub de ${member.name}`}
                   >
@@ -86,18 +84,14 @@ export function Team() {
                   </a>
                   <a 
                     href={member.social.linkedin} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                     aria-label={`LinkedIn de ${member.name}`}
                   >
                     <Linkedin className="h-5 w-5" />
                   </a>
-                  <a 
-                    href={member.social.twitter} 
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                    aria-label={`Twitter de ${member.name}`}
-                  >
-                    <Twitter className="h-5 w-5" />
-                  </a>
+                  
                 </div>
               </CardContent>
             </Card>
