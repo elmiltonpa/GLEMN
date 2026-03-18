@@ -14,12 +14,20 @@ const projects = [
     githubUrl: "https://github.com/GonzaProg/AleGymApp-FrontEnd",
   },
    {
-    title: "AmargoYDulce, E-commerce de golosinas",
+    title: "AmargoYDulce - E-commerce de golosinas",
     description: "Amargo y Dulce es una tienda online de golosinas, donde los usuarios pueden encontrar una amplia variedad de productos para satisfacer sus antojos. Con un diseño moderno y una interfaz intuitiva, los usuarios pueden navegar por las diferentes categorías de productos, agregar productos al carrito y realizar pedidos de manera rápida y segura.",
     image: "/amargoydulce.png",
-    tags: ["Nextjs", "Strapi","Supabase","Tailwind"],
+    tags: ["Nextjs", "Strapi","Supabase","Tailwind","Docker"],
     liveUrl: "https://amargo-y-dulce.vercel.app/",
     githubUrl: "https://github.com/LucasTabacchi/frontend-ecommerce-amargo-y-dulce/",
+  },
+  {
+    title: "Project Flow - Gestión de proyectos",
+    description: "Project Flow es una plataforma de gestión de proyectos diseñada para equipos que buscan optimizar su flujo de trabajo. Con una interfaz intuitiva y herramientas avanzadas, Project Flow permite a los usuarios gestionar sus proyectos de manera eficiente y colaborativa.",
+    image: "/projectflow.jpg",
+    tags: ["Nextjs", "Supabase", "Tailwind", "Prisma"],
+    liveUrl: "https://project-flow-one.vercel.app/login",
+    githubUrl: "https://github.com/LucasTabacchi/project-flow",
   },
 ]
 
