@@ -28,8 +28,8 @@ const team = [
     bio: "Estudiante avanzado de Licenciatura en Sistemas de Información, con un gran interés en las interfaces de usuario interactivas y accesibles.",
     avatar: "LT",
     social: {
-      github: "#",
-      linkedin: "#",
+      github: "https://github.com/LucasTabacchi",
+      linkedin: "http://www.linkedin.com/in/lucas-tabacchi-ab74551a5",
     },
   },
   {
@@ -38,8 +38,8 @@ const team = [
     bio: "Enfocado en la experiencia de usuario y en crear productos digitales estéticamente memorables.",
     avatar: "NG",
     social: {
-      github: "#",
-      linkedin: "#",
+      github: "https://github.com/NahuelGodoy21",
+      linkedin: "http://www.linkedin.com/in/nahuel-godoy-181118204",
     },
   },
 ]

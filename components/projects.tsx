@@ -13,6 +13,14 @@ const projects = [
     liveUrl: "",
     githubUrl: "https://github.com/GonzaProg/AleGymApp-FrontEnd",
   },
+   {
+    title: "AmargoYDulce, E-commerce de golosinas",
+    description: "Amargo y Dulce es una tienda online de golosinas, donde los usuarios pueden encontrar una amplia variedad de productos para satisfacer sus antojos. Con un diseño moderno y una interfaz intuitiva, los usuarios pueden navegar por las diferentes categorías de productos, agregar productos al carrito y realizar pedidos de manera rápida y segura.",
+    image: "/amargoydulce.png",
+    tags: ["Nextjs", "Strapi","Supabase","Tailwind"],
+    liveUrl: "https://amargo-y-dulce.vercel.app/",
+    githubUrl: "https://github.com/LucasTabacchi/frontend-ecommerce-amargo-y-dulce/",
+  },
 ]
 
 export function Projects() {
@@ -45,20 +53,20 @@ export function Projects() {
                 />
                 <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                   {project.liveUrl && (
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" variant="secondary" className="gap-2">
+                    <Button asChild size="sm" variant="secondary" className="gap-2">
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
                         Ver
-                      </Button>
-                    </a>
+                      </a>
+                    </Button>
                   )}
                   {project.githubUrl && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" variant="outline" className="gap-2">
+                    <Button asChild size="sm" variant="outline" className="gap-2">
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="h-4 w-4" />
                         Código
-                      </Button>
-                    </a>
+                      </a>
+                    </Button>
                   )}
                 </div>
               </div>
